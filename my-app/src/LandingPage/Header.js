@@ -7,7 +7,6 @@ import IconButton from '@material-ui/core/IconButton';
 import Home from '@material-ui/icons/Home';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import { Redirect } from "react-router-dom";
 import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
@@ -29,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header(props) {
   const classes = useStyles();
-  const { sections, title } = props;
+  const { sections} = props;
 
 let history = useHistory();
     const redirect = () => {

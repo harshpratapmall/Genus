@@ -12,12 +12,13 @@ import Dashboard from './AdminPanel/Dashboard'
 import Homepage from './LandingPage/Homepage'
 import AddTea from './AdminPanel/AddingTeacher'
 import ClassScheduling from './AdminPanel/ClassScheduling'
-import {Route, BrowserRouter as Router, Switch} from "react-router-dom"
+import {Route, BrowserRouter as Router, Switch, Redirect} from "react-router-dom"
 
 function main() {
     return (
     <Router>
       <Switch>
+        
       <Route path="/" exact component= {Homepage}></Route>
       <Route path="/signIn" component= {Login}></Route>
       <Route path="/forgotpassword" component= {Forgot}></Route>
@@ -30,7 +31,10 @@ function main() {
       <Route path="/StudentPanel" component= {DashboardS}></Route>
       <Route path="/AdminPanel/AddingTeacher" component= {AddTea}></Route>
       <Route path="/AdminPanel/ClassScheduling" component= {ClassScheduling}></Route>
+      
+      <Redirect to="/"></Redirect>
       </Switch>
+      
     </Router>
 
     )

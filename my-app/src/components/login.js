@@ -16,6 +16,7 @@ import './login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Instructions from './instruction'
 import { useHistory } from 'react-router-dom';
+import { useState} from 'react'
 
 function Copyright() {
   return (
@@ -73,9 +74,15 @@ let history = useHistory();
   }
 
   
-  const signIn = () => {
-    history.push('/StudentPanel') 
-}
+  const signIn = (e) => {
+    e.preventDefault()
+    console.log(email)
+    console.log(password)
+  }
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+
   return (
     <Grid container component="main" className={classes.root}>
       
@@ -90,13 +97,15 @@ let history = useHistory();
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} onSubmit={signIn}>
           <label>Email</label>
             <TextField
               variant="outlined"
               margin="normal"
-              required
+              required={true}
               fullWidth
+              value={email}
+              onInput={ e=>setEmail(e.target.value)}
               id="email"
               name="email"
               autoComplete="email"
@@ -106,7 +115,9 @@ let history = useHistory();
             <TextField
               variant="outlined"
               margin="normal"
-              required
+              required={true}
+              value={password}
+              onInput={ e=>setPassword(e.target.value)}
               fullWidth
               name="password"
               type="password"
@@ -117,7 +128,7 @@ let history = useHistory();
             <center>
             <Instructions/></center>
             <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
+              control={<Checkbox value="remember" color="primary" required={true}/>}
               label="I accept all the instructions and rules"
             />
             
@@ -127,7 +138,6 @@ let history = useHistory();
               variant="contained"
               color="primary"
               className={classes.submit}
-              onClick={signIn}
             >
               Sign In
             </Button>
@@ -136,20 +146,19 @@ let history = useHistory();
             <Button
               type="submit"
               variant="contained"
-              className={classes.submit}
             >
               <img src="https://img.icons8.com/fluent/48/000000/google-logo.png"
-                   align=""/>
+                  alt="Login" />
               Sign In with GOOGLE
             </Button></center>
               <Grid container>
               <Grid item xs>
-                <Link onClick={forgotpassword} href="#" variant="body2">
+                <Link onClick={forgotpassword} variant="body2">
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <Link onClick={signUp}href="#" variant="body2">
+                <Link onClick={signUp} variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

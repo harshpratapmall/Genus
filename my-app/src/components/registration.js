@@ -15,6 +15,7 @@ import Container from '@material-ui/core/Container';
 import './login.css';
 import Instructions from './instruction';
 import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
 
 
 function Copyright() {
@@ -59,6 +60,18 @@ export default function SignUp() {
     history.push('/signIn')
   }
 
+  const register = (e) => {
+    e.preventDefault()
+    console.log(firstName)
+    console.log(lastName)
+    console.log(email)
+    console.log(password)
+  }
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [firstName, setfirstName] = useState('');
+  const [lastName, setsetlastName] = useState('');
+
   return (
     <Container component="main" maxWidth="sm">
       <CssBaseline />
@@ -69,18 +82,20 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Registration
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={register}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
-                required
                 fullWidth
                 id="firstName"
                 label="First Name"
                 autoFocus
+                required={true}
+                value={firstName}
+                onInput={ e=>setfirstName(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -92,6 +107,8 @@ export default function SignUp() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                value={lastName}
+                onInput={ e=>setsetlastName(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -103,6 +120,8 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                value={email}
+                onInput={ e=>setEmail(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -115,11 +134,13 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                value={password}
+                onInput={ e=>setPassword(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                control={<Checkbox value="allowExtraEmails" color="primary" required />}
                 label="I agree to the terms and conditions"
               />
             </Grid>
@@ -144,7 +165,7 @@ export default function SignUp() {
               color=""
               className={classes.submit}
             >
-              <img src="https://img.icons8.com/fluent/48/000000/google-logo.png"/>
+              <img src="https://img.icons8.com/fluent/48/000000/google-logo.png" alt="Registration"/>
               Sign Up with GOOGLE
             </Button>
             <Button id='glogin' disabled >

@@ -22,8 +22,6 @@ import { mainListItems, secondaryListItems } from './Menu';
 import Notice from './Notice';
 import Schedule from './Schedule';
 
-import { useHistory } from 'react-router-dom';
-
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">

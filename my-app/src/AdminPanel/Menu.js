@@ -9,6 +9,7 @@ import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/AvTimer';
 import LayersIcon from '@material-ui/icons/Layers';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import ListAltIcon from '@material-ui/icons/ListAlt';
 
 export const mainListItems = (
   <div>
@@ -30,7 +31,7 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Pending Confirmation" />
     </ListItem>
-    <ListItem button>
+    <ListItem button >
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
@@ -41,6 +42,20 @@ export const mainListItems = (
         <LayersIcon />
       </ListItemIcon>
       <ListItemText primary="Recorded Classes" />
+    </ListItem>
+
+    <ListItem button>
+      <ListItemIcon>
+        <ListAltIcon />
+      </ListItemIcon>
+      <ListItemText primary="Student's List" />
+    </ListItem>
+
+    <ListItem button>
+      <ListItemIcon>
+        <ListAltIcon />
+      </ListItemIcon>
+      <ListItemText primary="Teacher's List" />
     </ListItem>
   </div>
 );

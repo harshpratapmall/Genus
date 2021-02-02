@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import './login.css';
-
+import { useState } from 'react'
 
 function Copyright() {
   return (
@@ -49,8 +49,43 @@ const useStyles = makeStyles((theme) => ({
  
 }));
 
+
 export default function SignUp() {
   const classes = useStyles();
+
+  
+const form = (e) => {
+  e.preventDefault()
+  console.log(firstName)
+  console.log(lastName)
+  console.log(fatherName)
+  console.log(motherName)
+  console.log(firstName)
+  console.log(F_occupation)
+  console.log(M_occupation)
+  console.log(no_father)
+  console.log(no_mother)
+  console.log(no_stu)
+  console.log(email)
+  console.log(DOB)
+  console.log(standard)
+  console.log(Pre_res)
+  console.log(insti)  
+}
+const [firstName, setfirstName] = useState('');
+const [lastName, setlastName] = useState('');
+const [fatherName, setfatherName] = useState('');
+const [motherName, setmotherName] = useState('');
+const [F_occupation, setF_occupation] = useState('');
+const [M_occupation, setM_occupation] = useState('');
+const [no_father, setno_father] = useState('');
+const [no_mother, setno_mother] = useState('');
+const [no_stu, setno_stu] = useState('');
+const [email, setEmail] = useState('');
+const [DOB, setDOB] = useState('');
+const [standard, setstandard] = useState('');
+const [Pre_res, setPre_res] = useState('');
+const [insti, setinsti] = useState('');
 
   return (
     <Container component="main" maxWidth="sm">
@@ -62,7 +97,7 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Form
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={form}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -74,6 +109,8 @@ export default function SignUp() {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                value={firstName}
+                onInput={ e=>setfirstName(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -85,6 +122,8 @@ export default function SignUp() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                value={lastName}
+                onInput={ e=>setlastName(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -96,6 +135,8 @@ export default function SignUp() {
                 label="Father's Name"
                 name="fatherName"
                 autoComplete="fatherName"
+                value={fatherName}
+                onInput={ e=>setfatherName(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -108,7 +149,8 @@ export default function SignUp() {
                 type="text"
                 id="motherName"
                 autoComplete="motherName"
-                
+                value={motherName}
+                onInput={ e=>setmotherName(e.target.value)}
               />
             </Grid>
             
@@ -121,6 +163,8 @@ export default function SignUp() {
                 fullWidth
                 id="F_occupation"
                 label="Father's Occupation"
+                value={F_occupation}
+                onInput={ e=>setF_occupation(e.target.value)}
               />
             </Grid>
             
@@ -133,6 +177,8 @@ export default function SignUp() {
                 label="Mother's Occupation"
                 name="M_occupation"
                 autoComplete="M_occupation"
+                value={M_occupation}
+                onInput={ e=>setM_occupation(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -144,7 +190,9 @@ export default function SignUp() {
                 label="Contact Number(Father)"
                 name="no_father"
                 autoComplete="no_father"
-                type="tel"
+                type="number"
+                value={no_father}
+                onInput={ e=>setno_father(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -156,7 +204,9 @@ export default function SignUp() {
                 label="Contact Number(Mother) "
                 name="no_mother"
                 autoComplete="no_mother"
-                type="tel"
+                type="number"
+                value={no_mother}
+                onInput={ e=>setno_mother(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -168,7 +218,9 @@ export default function SignUp() {
                 label="Contact Number(Student) "
                 name="no_stu"
                 autoComplete="no_stu"
-                type="tel"
+                type="number"
+                value={no_stu}
+                onInput={ e=>setno_stu(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -180,6 +232,9 @@ export default function SignUp() {
                 label="E-mail ID(Student) "
                 name="email"
                 autoComplete="email"
+                value={email}
+                type="email"
+                onInput={ e=>setEmail(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -199,6 +254,8 @@ export default function SignUp() {
                 name="DOB"
                 autoComplete="DOB"
                 type="date"
+                value={DOB}
+                onInput={ e=>setDOB(e.target.value)}
               />
             </Grid>
             
@@ -207,11 +264,13 @@ export default function SignUp() {
                 variant="outlined"
                 required
                 fullWidth
-                id="class"
+                id="standard"
                 label="Class"
-                name="class"
+                name="standard"
                 autoComplete="class"
                 type="number"
+                value={standard}
+                onInput={ e=>setstandard(e.target.value)}
               />
             </Grid>
             
@@ -225,6 +284,9 @@ export default function SignUp() {
                 name="Pre_res"
                 autoComplete="Pre_res"
                 type="text"
+                type="number"
+                value={Pre_res}
+                onInput={ e=>setPre_res(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={12}>
@@ -237,13 +299,15 @@ export default function SignUp() {
                 name="insti"
                 autoComplete="insti"
                 type="text"
+                value={insti}
+                onInput={ e=>setinsti(e.target.value)}
               />
             </Grid>
 
             
             <Grid item xs={12}>
               <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                control={<Checkbox value="allowExtraEmails" color="primary" required/>}
                 label="I declare that the information submitted above is true and correct to best of my knowledge and belief"
               />
             </Grid>

@@ -103,6 +103,7 @@ let history = useHistory();
               variant="outlined"
               margin="normal"
               required={true}
+              type="email"
               fullWidth
               value={email}
               onInput={ e=>setEmail(e.target.value)}

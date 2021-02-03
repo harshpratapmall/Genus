@@ -19,7 +19,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ExitToApp from '@material-ui/icons/ExitToApp';
 import { mainListItems, secondaryListItems } from './Menu';
 import Notice from './Notice';
-import ClassSchedulingComponent from './ClassSchedulingComponent'
+import ReschedulingComponent from './ReschedulingComponent'
 
 function Copyright() {
   return (
@@ -172,10 +172,10 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* Schdedule */}
+            {/* Adding Teacher */}
             <Grid item xs={12} md={8} lg={9}>
               <Paper>
-              <ClassSchedulingComponent/>
+              <ReschedulingComponent/>
               </Paper>
             </Grid>
             {/* Recent Notice */}
@@ -187,7 +187,7 @@ export default function Dashboard() {
             {/* Recent Schedule */}
             
           </Grid>
-          <Box pt={2}>
+          <Box pt={6}>
             <Copyright />
           </Box>
         </Container>

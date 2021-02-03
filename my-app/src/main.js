@@ -13,6 +13,7 @@ import Homepage from './LandingPage/Homepage'
 import AddTea from './AdminPanel/AddingTeacher'
 import ClassScheduling from './AdminPanel/ClassScheduling'
 import TeacherList from './AdminPanel/TeacherList'
+import Rescheduling from './AdminPanel/Rescheduling'
 import {Route, BrowserRouter as Router, Switch, Redirect} from "react-router-dom"
 
 function main() {
@@ -33,6 +34,8 @@ function main() {
       <Route path="/admin/AddingTeacher" component= {AddTea}></Route>
       <Route path="/Admin/ClassScheduling" component= {ClassScheduling}></Route>
       <Route path="/Admin/TeacherList" component= {TeacherList}></Route>
+      <Route path="/Admin/Reschedule" component= {Rescheduling}></Route>
+      
       <Redirect to="/"></Redirect>
       </Switch>
       

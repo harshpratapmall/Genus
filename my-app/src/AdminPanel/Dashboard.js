@@ -126,7 +126,6 @@ export default function Dashboard() {
   };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
-
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -185,11 +184,7 @@ export default function Dashboard() {
               </Paper>
             </Grid>
             {/* Recent Schedule */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                
-              </Paper>
-            </Grid>
+            
           </Grid>
           <Box pt={4}>
             <Copyright />

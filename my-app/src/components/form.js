@@ -283,7 +283,6 @@ const [insti, setinsti] = useState('');
                 label="Previous Clasas Result (%)"
                 name="Pre_res"
                 autoComplete="Pre_res"
-                type="text"
                 type="number"
                 value={Pre_res}
                 onInput={ e=>setPre_res(e.target.value)}

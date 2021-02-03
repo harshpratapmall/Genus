@@ -17,7 +17,7 @@ export const mainListItems = (
       <ListItemIcon>
         <Timer />
       </ListItemIcon>
-      <ListItemText primary="Schedule a class" />
+      <ListItemText onCl primary="Schedule a class" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
